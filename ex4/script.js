@@ -1,26 +1,35 @@
-
-let inicio = document.getElementById('inicio').value;
-let final = document.getElementById('final').value;
-let aux = inicio;
+aux2 = -1;
+//metodo incial chamado pelo botao no html//
 function escrevaNumeros() {
+    const inicio = document.getElementById('inicio').value;
+    const final = document.getElementById('final').value;
+    aux = inicio;
+    aux2++;
+    aux = + aux2;
 
-    if (aux < final) {
+    if (aux <= final) {
+        console.log(aux);
         Alert();
     } else {
-        break
+        console.log('voce chegou ao fim');
+        var para = document.createElement("P");
+        para.innerText = "Chegou ao fim";
+        document.body.appendChild(para);
+        aux = 0;
+        aux2 = -1;
     }
 
-
 }
-
+//metodo para escrever no html//
 function Escrever() {
     var para = document.createElement("P");
     para.innerText = aux;
     document.body.appendChild(para);
     escrevaNumeros();
 }
-
+//metodo para dar delay//
 function Alert() {
-
-    setTimeout(Escrever, 5000);
+    let tempo = setTimeout(Escrever, 1000);
 }
+
+
